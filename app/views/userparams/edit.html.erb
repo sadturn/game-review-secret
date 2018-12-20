@@ -1,0 +1,7 @@
+<%= form_for @userparam, url: userparam_path(current_user.id) do |f| %>
+
+    Name: <%= f.text_field :name %><br />
+    Age: <%= f.text_field :age %><br />
+  
+    <%= f.submit "Update" %>
+  <% end %>

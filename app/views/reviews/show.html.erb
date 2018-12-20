@@ -1,0 +1,12 @@
+<h1>Reviews#show</h1>
+<p>Find me in app/views/reviews/show.html.erb</p>
+
+User: <%= @review.user.email %><br />
+Title: <%= @review.title %><br />
+Body: <%= @review.body %><br />
+<hr>
+
+<% if @review.user_id == current_user.id %>
+<p><%= link_to "edit", edit_review_path(@review.id) %> |
+<%= link_to "delete", review_path(@review.id), method: :delete %><br /></p>
+<% end %>

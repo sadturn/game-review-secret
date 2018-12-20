@@ -1,0 +1,18 @@
+<h1>Pages#index</h1>
+<p>Find me in app/views/pages/index.html.erb</p>
+
+<%= link_to "Create new review",  new_review_path %> <br />
+
+<br />
+
+<% if @reviews == [] %>
+    
+<% else %>
+    <% @reviews.each do |review| %>
+        <b><%= review.user.email %></b> writes: <br />
+        <b><%= review.title %></b><br />
+        <%= review.body %></p>
+        <p><%= link_to "Read More", review_path(review.id) %></p>
+        <hr>
+    <% end %>
+<%end%>
